@@ -11,8 +11,6 @@ public class OOPExample {
 		jillian.talk();
 		jordan.talk();
 		joseph.talk();
-		//casting a Student into a Junior
-		((Junior)jordan).showColor();
 	}
 
 }
