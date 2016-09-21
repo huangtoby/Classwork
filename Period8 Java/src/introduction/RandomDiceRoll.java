@@ -3,12 +3,11 @@ package introduction;
 public class RandomDiceRoll {
 	
 	public static void main(String[] args){
-		
 		int[] results = new int[6];
 		//declare variable, logic test, increment
 		int totalRolls = 10000;
 		for(int index = 0; index < totalRolls;index ++){
-			int result = rollUnfairDie();
+			int result = rollFairDie();
 			System.out.println("Roll #"+(index+1)+": "+result);
 			results[result-1] ++;
 		}
