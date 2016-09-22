@@ -60,16 +60,33 @@ public class StringPractice {
 	
 	public static void print(String s) {
 		String printString = s;
-		int cutoff = 45;
+		int cutoff = 10;
 		if(printString.length() > cutoff){
-			int cut = 1;
-			int cutIndex = cut * cutoff;
-			String currentCut = s.substring(0,cutIndex);
-			
-			
-			printString = currentCut;
+			for(int i = 0; i*cutoff <s.length(); i++){
+				//append '+='
+				printString += getCut(s, cutoff, i+1)+"\n";
+			}
 		}
 		System.out.println(printString);
+	}
+	
+	private static String getCut(String s, int cutoff, int cut){
+		int cutIndex = cut * cutoff;
+		if(cutIndex >s.length()) cutIndex = s.length();
+		String currentCut = s.substring(0,cutIndex);
+		
+		int indexOfLastSpace = currentCut.length()-1;
+		//start at last index, go backwards
+		for (int i = currentCut.length()-1; i>=0; i--){
+			String letter = currentCut.substring(i, i+1);
+			if(letter.equals(" ")){
+				indexOfLastSpace = i;
+				break;
+			}
+		}
+		//shorten the cut to end on a space
+		currentCut = currentCut.substring(0,indexOfLastSpace);
+		return currentCut;
 	}
 }
 
