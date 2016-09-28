@@ -37,7 +37,7 @@ public class TobyMain {
 			if(findKeyword(response, "good",0)>=0){
 				print("That's wonderful. So glad you feel good.");
 			}
-			
+			//response to liking school
 			else if(response.indexOf("school") >=0){
 				print("School is great! Tell me about school.");
 				inMainLoop = false;
@@ -98,7 +98,7 @@ public class TobyMain {
 	 *@param searchString (always lowercase)
 	 *@param psn
 	 *@return "true" if there is no negation words in front of psn
-	*/
+	 */
 	private static boolean noNegations(String searchString, int psn) {
 		//check to see if the word "no" is in front of psn
 		//check to see if there are 3 spaces in front
@@ -106,16 +106,16 @@ public class TobyMain {
 		if(psn -3 >=0 && searchString.substring(psn-3,psn).equals("no ")){
 			return false;
 		}
-		
+		//not
 		if(psn -4 >=0 && searchString.substring(psn-4,psn).equals("not ")){
 			return false;
 			
 		}
-		
+		//never
 		if(psn -6 >=0 && searchString.substring(psn-6,psn).equals("never ")){
 			return false;
 		}	
-		
+		//n't
 		if(psn -4 >=0 && searchString.substring(psn-4,psn).equals("n't ")){
 			return false;
 		}
