@@ -20,17 +20,17 @@ public class TobySchool implements Chatbot{
 	}
 
 	public boolean isTriggered(String userInput) {
-		String[] triggers = {"school","class","teacher"};
+		//String[] triggers = {"school","class","teacher"};
 		
 		if(TobyMain.findKeyword(userInput, "school", 0) >=0){
 			return true;
 		}
 
-		if(TobyMain.findKeyword(userInput, "school", 0) >=0){
+		if(TobyMain.findKeyword(userInput, "class", 0) >=0){
 			return true;
 		}
+		
 		return false;
-
 	}	
 }
 
