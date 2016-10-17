@@ -1,11 +1,46 @@
 package arrays;
+/**
+ * Primitive type[] are "already" in the system, start as zero (cannot mix types)
+ * Object[] unless materialized, start as null (different types of objects in an array of common superclass)
+ */
 
 public class ArrayPractice {
 //If you want to put different primitive types into an array you must use their wrapper class
 	static boolean[] boos3;
 	
 	public static void main(String[] args) {
+		//how do you time a process?
+		long currentTime = System.currentTimeMillis();
 		
+		String[] someStrings = new String[1000];
+		standardPopulate(someStrings);
+		String s = someStrings[999];
+		makeSpecial(s);
+		print(someStrings);
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took "+(endTime-currentTime+" ms."));
+		
+	}
+	
+	private static void makeSpecial(String s) {
+		s = "THIS STRING IS SPECIAL!";	
+	}
+
+	private static void print(String[] s) {
+		for (int i = 0;i <s.length; i++){
+			System.out.println(s[i]);
+		}
+	}
+	
+	private static void standardPopulate(String[] s) {
+		for(int i = 0;i <s.length; i++){
+			String string = "String #"+(i+1);
+			s[i] = string;
+		}
+	}
+	
+	public static void initializingArraysExample(){
 		//two different ways to instantiate an array
 		boolean[] boos1 = new boolean[3];
 		//this can only be done at the declaration
@@ -33,8 +68,7 @@ public class ArrayPractice {
 		 * 	- faster
 		 */
 		for(boolean b: boos1){
-			System.out.println(b);
-			
+			System.out.println(b);	
 		}
 		//OBJECT ARRAYS
 		String[] someStrings1 = new String[3];
@@ -48,7 +82,6 @@ public class ArrayPractice {
 		//let's try a loop to instantiate
 		for(int i = 0; i <someStrings1.length; i++){
 			someStrings1[i] = "a new String";
-			
 		}
 		//a loop to print it
 		for(String s:someStrings1){
