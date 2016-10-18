@@ -12,17 +12,77 @@ public class ArrayPractice {
 		//how do you time a process?
 		long currentTime = System.currentTimeMillis();
 		
-		String[] someStrings = new String[1000];
-		standardPopulate(someStrings);
-		String s = someStrings[999];
-		makeSpecial(s);
-		print(someStrings);
+		int[] fiftyNumbers = new int[50000];
+		populate(fiftyNumbers);
+		print(fiftyNumbers);
+		//randomize(fiftyNumbers,50000);
+		//print(fiftyNumbers);
+		rollDice(fiftyNumbers,2);
+		//count each die roll and provide a percentage
+		countResult(fiftyNumbers,4);
+		//listcards();
 		
 		long endTime = System.currentTimeMillis();
 		System.out.println("The process took "+(endTime-currentTime+" ms."));
 		
 	}
 	
+	private static void countResult(int[] fiftyNumbers, int numberOfDice) {
+		System.out.println("CountResultMethod");
+		int[] counter = new int[numberOfDice*6];
+		for(int n: fiftyNumbers){
+			counter[n-1] = counter[n-1]+1;
+		}
+		for(int i = numberOfDice-1; i <counter.length; i++){
+			System.out.println((i+1) +" was rolled "+100*counter[i]/fiftyNumbers.length+" percent of the time.");
+		}
+		
+	}
+
+	private static void rollDice(int[] fiftyNumbers, int numberOfDice) {
+		for(int i = 0;i <fiftyNumbers.length; i++){
+			int dice = 0;
+			for(int j = 0; j <numberOfDice; j++){
+				dice = dice + (int)(1+6*Math.random());
+			}
+			fiftyNumbers[i] = dice;
+		}
+		
+	}
+
+	private static void randomize(int[] fiftyNumbers,int max) {
+		for(int i = 0;i <fiftyNumbers.length; i++){
+			int randomNumber = (int)(1+(max*Math.random()));
+			fiftyNumbers[i] = randomNumber;
+		}
+	}
+
+	private static void print(int[] fiftyNumbers) {
+		for(int i = 0;i <fiftyNumbers.length; i++){
+			System.out.println(fiftyNumbers[i]);
+		}		
+	}
+
+	private static void populate(int[] fiftyNumbers) {
+		for(int i = 0;i <fiftyNumbers.length; i++){
+			fiftyNumbers[i] = i+1;
+		}
+	}
+
+	private void demonstratePassByValue(){
+		String[] someStrings = new String[1000];
+		standardPopulate(someStrings);
+		String s = someStrings[999];
+		makeSpecial(s);
+		someStrings[999] = getASpecialString();
+		print(someStrings);
+	}
+	
+	private static String getASpecialString() {
+		String s = "THIS IS STRING IS SPECIAL!";
+		return s;
+	}
+
 	private static void makeSpecial(String s) {
 		s = "THIS STRING IS SPECIAL!";	
 	}
