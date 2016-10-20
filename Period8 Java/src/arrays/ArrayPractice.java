@@ -13,8 +13,8 @@ public class ArrayPractice {
 		long currentTime = System.currentTimeMillis();
 		
 		int[] fiftyNumbers = new int[50000];
-		populate(fiftyNumbers);
-		print(fiftyNumbers);
+		//populate(fiftyNumbers);
+		//print(fiftyNumbers);
 		//randomize(fiftyNumbers,50000);
 		//print(fiftyNumbers);
 		rollDice(fiftyNumbers,2);
@@ -34,13 +34,14 @@ public class ArrayPractice {
 			counter[n-1] = counter[n-1]+1;
 		}
 		for(int i = numberOfDice-1; i <counter.length; i++){
-			System.out.println((i+1) +" was rolled "+100*counter[i]/fiftyNumbers.length+" percent of the time.");
+			System.out.println((i+1) +" was rolled "+100*counter[i]/fiftyNumbers.length+"% of the time.");
 		}
 		
 	}
 
 	private static void rollDice(int[] fiftyNumbers, int numberOfDice) {
-		for(int i = 0;i <fiftyNumbers.length; i++){
+		System.out.println("RollDiceMethod");
+		for(int i = 0; i <fiftyNumbers.length; i++){
 			int dice = 0;
 			for(int j = 0; j <numberOfDice; j++){
 				dice = dice + (int)(1+6*Math.random());
@@ -51,20 +52,20 @@ public class ArrayPractice {
 	}
 
 	private static void randomize(int[] fiftyNumbers,int max) {
-		for(int i = 0;i <fiftyNumbers.length; i++){
+		for(int i = 0; i <fiftyNumbers.length; i++){
 			int randomNumber = (int)(1+(max*Math.random()));
 			fiftyNumbers[i] = randomNumber;
 		}
 	}
 
 	private static void print(int[] fiftyNumbers) {
-		for(int i = 0;i <fiftyNumbers.length; i++){
+		for(int i = 0; i <fiftyNumbers.length; i++){
 			System.out.println(fiftyNumbers[i]);
 		}		
 	}
 
 	private static void populate(int[] fiftyNumbers) {
-		for(int i = 0;i <fiftyNumbers.length; i++){
+		for(int i = 0; i <fiftyNumbers.length; i++){
 			fiftyNumbers[i] = i+1;
 		}
 	}
@@ -88,13 +89,13 @@ public class ArrayPractice {
 	}
 
 	private static void print(String[] s) {
-		for (int i = 0;i <s.length; i++){
+		for (int i = 0; i <s.length; i++){
 			System.out.println(s[i]);
 		}
 	}
 	
 	private static void standardPopulate(String[] s) {
-		for(int i = 0;i <s.length; i++){
+		for(int i = 0; i <s.length; i++){
 			String string = "String #"+(i+1);
 			s[i] = string;
 		}
