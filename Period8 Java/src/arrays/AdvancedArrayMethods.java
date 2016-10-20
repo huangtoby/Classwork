@@ -14,6 +14,16 @@ public class AdvancedArrayMethods {
 		System.out.println(array[30]);
 		
 //		methodA(someArray);
+		
+		String[] array = {"a","b","c","d","e","f","g","h"};
+		swap(array, 0, array.length-1);	
+	}
+
+	private static void swap(String[] arr, int a, int b) {
+		String placeholder = arr[b];
+		arr[b] = arr[a];
+		arr[a] = placeholder;
+		
 	}
 
 	private static void methodA(int[] someArray) {
