@@ -17,6 +17,16 @@ public class AdvancedArrayMethods {
 		
 		String[] array = {"a","b","c","d","e","f","g","h"};
 		swap(array, 0, array.length-1);	
+		shuffle(array);
+	}
+
+	private static void shuffle(String[] array) {
+		for(int i = 0; i <array.length; i++){
+			int random = (int)(Math.random()*6);
+			swap(array, i,random);
+		}
+            
+		
 	}
 
 	private static void swap(String[] arr, int a, int b) {
