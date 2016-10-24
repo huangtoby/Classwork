@@ -13,18 +13,18 @@ public class ArrayMethods {
      * */
    }
    
-	public static int searchUnsorted(int[] arrayToSearch, int key){
-		for(int i = 0; i <arrayToSearch.length; i++){
-			if(arrayToSearch[i] == key){
-		        return i;
-            } 
-        }
-   /**
-    * this method take an unsorted int array (arrayToSearch) and returns an 
-    * int corresponding to the index of a key, if it is in the array
-    * if the key is not in the array, this method returns -1
-    * */
-   }
+//	public static int searchUnsorted(int[] arrayToSearch, int key){
+//		for(int i = 0; i <arrayToSearch.length; i++){
+//			if(arrayToSearch[i] == key){
+//		        return i;
+//            } 
+//        }
+//   /**
+//    * this method take an unsorted int array (arrayToSearch) and returns an 
+//    * int corresponding to the index of a key, if it is in the array
+//    * if the key is not in the array, this method returns -1
+//    * */
+//   }
    
    public static int searchSorted(int[] sortedArrayToSearch, int key){
    /**
