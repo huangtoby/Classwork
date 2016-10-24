@@ -105,6 +105,23 @@ public class ArrayMethods {
    }
 
    public static int longestSharedSequence(int[] array1, int[] array2){
+	   int max = 0;
+	   int count = 0;
+		
+	   for(int seqStart = 0; seqStart <array1.length; seqStart++){
+		   int seqEnd = seqStart;
+		   int[] seq = checkSequence(seqStart, seqEnd, array1);
+		   if(checkSequence(seq, array2)){
+			   count++;
+			   if(count >max){
+				   max = count;
+			   }
+		   }
+		   //reset the count after every seq has been checked
+		   count = 0;
+	   }
+		
+	   return max;
        /**This method counts the longest unbroken, shared sequence in TWO arrays.
         * The sequence does NOT have to be a consecutive sequence
         * It does NOT matter where the sequence begins, the arrays might not be the same length
@@ -115,11 +132,21 @@ public class ArrayMethods {
         *          since the sequence '9,6,3,4,3' is in both arrays and is 5 integers long, it doesn't matter that the sequence begins at different indices 
         * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
         * */
-       
-       return 0;
    }
+   //returns true if seq is found inside array2
+   private static boolean checkSequence(int[] seq, int[] array2) {
+	
+	return false;
+}
 
-   public static int[] generateDistinctItemsList(int n){
+   //returns a sub-array containing the elements
+   //in array1 from seqStart to seqEnd
+   private static int[] checkSequence(int seqStart, int seqEnd, int[] array1) {
+	
+	return null;
+}
+
+public static int[] generateDistinctItemsList(int n){
        /**
         * This method needs to generate an int[] of length n that contains distinct, random integers
         * between 1 and 2n 
