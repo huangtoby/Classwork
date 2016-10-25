@@ -110,7 +110,7 @@ public class ArrayMethods {
 		
 	   for(int seqStart = 0; seqStart <array1.length; seqStart++){
 		   int seqEnd = seqStart;
-		   int[] seq = checkSequence(seqStart, seqEnd, array1);
+		   int[] seq = getSequence(seqStart, seqEnd, array1);
 		   if(checkSequence(seq, array2)){
 			   count++;
 			   if(count >max){
@@ -141,7 +141,7 @@ public class ArrayMethods {
 
    //returns a sub-array containing the elements
    //in array1 from seqStart to seqEnd
-   private static int[] checkSequence(int seqStart, int seqEnd, int[] array1) {
+   private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
 	
 	return null;
 }
