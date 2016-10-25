@@ -13,20 +13,20 @@ public class ArrayMethods {
      * */
    }
    
-//	public static int searchUnsorted(int[] arrayToSearch, int key){
+	public static int searchUnsorted(int[] arrayToSearch, int key){
 //		for(int i = 0; i <arrayToSearch.length; i++){
 //			if(arrayToSearch[i] == key){
 //		        return i;
 //            } 
 //        }
-//   /**
-//    * this method take an unsorted int array (arrayToSearch) and returns an 
-//    * int corresponding to the index of a key, if it is in the array
-//    * if the key is not in the array, this method returns -1
-//    * */
-//   }
+   /**
+    * this method take an unsorted int array (arrayToSearch) and returns an 
+    * int corresponding to the index of a key, if it is in the array
+    * if the key is not in the array, this method returns -1
+    * */
+   }
    
-   public static int searchSorted(int[] sortedArrayToSearch, int key){
+	public static int searchSorted(int[] sortedArrayToSearch, int key){
    /**
     * this method is exactly like the one above, except the parameter sortedArrayToSearch will
     * always be sorted in DESCENDING order. Again return the index of the key or return -1
@@ -35,17 +35,16 @@ public class ArrayMethods {
     * Note: You should attempt to write a method that is more efficient that searchUnsorted
     * */
     return -1;
-   }
+}
    
-   public static boolean isSorted(int[] array){
+	public static boolean isSorted(int[] array){
        /**
         * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
         * */
        return false;
-   }
+}
    
-   
-   public static double[] getStats(double[] array){
+	public static double[] getStats(double[] array){
        /** 
         * This method return a double[] contain a WHOLE BUNCH of stats
         * The double array must keep the following stats about the array parameter:
@@ -59,8 +58,8 @@ public class ArrayMethods {
         double[] stats = new double[6];
         return stats;
    }
-   
-   public static void reverseOrder(int[] array){
+	   
+	public static void reverseOrder(int[] array){
        /**
         * this method reverses the order of the array passed to it.
         * Not that this method does not have a return type. You do not need to copy the array first
@@ -75,7 +74,7 @@ public class ArrayMethods {
         * */
    }
    
-   public static int countDifferences(int[] array1, int[] array2){
+	public static int countDifferences(int[] array1, int[] array2){
        /**Here, you will write an method that returns the number of values in two arrays 
         * that are NOT the same (either in value OR location).
         * The arrays ALWAYS have the same length
@@ -88,9 +87,8 @@ public class ArrayMethods {
         * */
         return 0;
    }
-   
 
-   public static int longestConsecutiveSequence(int[] array1){
+	public static int longestConsecutiveSequence(int[] array1){
        /**This method counts the longest consequtive sequence in an array.
         * It does not matter where the sequence begins
         * If there are no consecutive numbers, the method should return '1'
@@ -104,7 +102,7 @@ public class ArrayMethods {
        return 0;
    }
 
-   public static int longestSharedSequence(int[] array1, int[] array2){
+	public static int longestSharedSequence(int[] array1, int[] array2){
 	   int max = 0;
 	   int count = 0;
 		
@@ -134,19 +132,29 @@ public class ArrayMethods {
         * */
    }
    //returns true if seq is found inside array2
-   private static boolean checkSequence(int[] seq, int[] array2) {
-	
-	return false;
-}
+	private static boolean checkSequence(int[] seq, int[] array2) {
+		for(int i = 0; i <array2.length; i++){
+		   //j checks every element in seq
+			for(int j = 0; j <seq.length; j++){
+				if(j+1 <array2.length && seq[j] != array2[j+i]){
+				   //breaks out of inner-most for-loop unless particular for-loop is specified(label "A:")
+					break;
+				}else if(j == seq.length-1){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
    //returns a sub-array containing the elements
    //in array1 from seqStart to seqEnd
-   private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
-	
+	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
+	   
 	return null;
 }
 
-public static int[] generateDistinctItemsList(int n){
+   public static int[] generateDistinctItemsList(int n){
        /**
         * This method needs to generate an int[] of length n that contains distinct, random integers
         * between 1 and 2n 
