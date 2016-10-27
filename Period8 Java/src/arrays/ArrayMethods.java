@@ -28,11 +28,8 @@ public class ArrayMethods {
 	}
    
 	public static int searchSorted(int[] sortedArrayToSearch, int key){
-		for(int i=0;i<sortedArrayToSearch.length/2;i++) {
-            int temp = sortedArrayToSearch[i];
-            sortedArrayToSearch[i] = sortedArrayToSearch[sortedArrayToSearch.length-(i+1)];
-            sortedArrayToSearch[sortedArrayToSearch.length-(i+1)] = temp;
-            if(sortedArrayToSearch[i] == key){
+		for(int i = 0; i <sortedArrayToSearch.length; i++){
+			if(sortedArrayToSearch[i] == key){
 		        return i;
             } 
         }
@@ -138,23 +135,24 @@ public class ArrayMethods {
 	}
 
 	public static int longestSharedSequence(int[] array1, int[] array2){
-	   int max = 0;
-	   int count = 0;
+	    int count = 0;
+        int max = 0;
+        for (int i = 0; i <array1.length; i++){
+            for(int j = 0; j <array2.length; j++){
+                if((i+count) <array1.length){
+                    if(array1[i+count] == array2[j]){
+                        count++;
+                    }else{
+                        count = 0;
+                    }
+                    if(max <count){
+                        max = count;
+                    }
+                }
+            }
+        }
 		
-	   for(int seqStart = 0; seqStart <array1.length; seqStart++){
-		   int seqEnd = seqStart;
-		   int[] seq = getSequence(seqStart, seqEnd, array1);
-		   if(checkSequence(seq, array2)){
-			   count++;
-			   if(count >max){
-				   max = count;
-			   }
-		   }
-		   //reset the count after every seq has been checked
-		   count = 0;
-	   }
-		
-	   return max;
+	   return count;
        /**This method counts the longest unbroken, shared sequence in TWO arrays.
         * The sequence does NOT have to be a consecutive sequence
         * It does NOT matter where the sequence begins, the arrays might not be the same length
@@ -166,30 +164,19 @@ public class ArrayMethods {
         * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
         * */
 	}
-   //returns true if seq is found inside array2
-		private static boolean checkSequence(int[] seq, int[] array2) {
-		for(int i = 0; i <array2.length; i++){
-		   //j checks every element in seq
-			for(int j = 0; j <seq.length; j++){
-				if(j+1 <array2.length && seq[j] != array2[j+i]){
-				   //breaks out of inner-most for-loop unless particular for-loop is specified(label "A:")
-					break;
-				}else if(j == seq.length-1){
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
-   //returns a sub-array containing the elements
-   //in array1 from seqStart to seqEnd
-		private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
-	   
-	return null;
-	}
 
 	public static int[] generateDistinctItemsList(int n){
+		int[] arr = new int[n];
+        boolean[] arr2 = new boolean[2*n];
+        for(int i = 0; i <arr.length; i++){
+            int value = (int)(2*n*Math.random()+1);
+            while(arr2[value-1] == true){
+                value = (int)(2*n*Math.random()+1);
+            }
+            arr2[value-1] = true; 
+            arr[i] = value;
+        }
+        return arr;
        /**
         * This method needs to generate an int[] of length n that contains distinct, random integers
         * between 1 and 2n 
@@ -197,10 +184,19 @@ public class ArrayMethods {
         * contains only entries between 1 and 2n (inclusive) and has no duplicates
         * 
         * */
-       return null; 
 	}
    
 	public static void cycleThrough(int[] array, int n){
+		while(n >0){
+            int first = array[0];
+            for(int i=0;i<array.length;i++){
+                if(i<array.length -1){
+                    array[i] = array[i+1];
+                }    
+            }
+            array[array.length-1] = first;
+                n--;
+        }
        /** This problem represents people moving through a line.
         * Once they get to the front of the line, they get what they've been waiting for, then they 
         * immediately go to the end of the line and "cycle through" again.
@@ -223,7 +219,6 @@ public class ArrayMethods {
         * CHALLENGE
         * For extra credit, make your method handle NEGATIVE n
         * */
-	}
-   
+	}   
 
 }
