@@ -14,19 +14,28 @@ public class ArrayMethods {
    }
    
 	public static int searchUnsorted(int[] arrayToSearch, int key){
-//		for(int i = 0; i <arrayToSearch.length; i++){
-//			if(arrayToSearch[i] == key){
-//		        return i;
-//            } 
-//        }
+		for(int i = 0; i <arrayToSearch.length; i++){
+			if(arrayToSearch[i] == key){
+		        return i;
+            } 
+        }
    /**
     * this method take an unsorted int array (arrayToSearch) and returns an 
     * int corresponding to the index of a key, if it is in the array
     * if the key is not in the array, this method returns -1
     * */
-   }
+	return -1;
+	}
    
 	public static int searchSorted(int[] sortedArrayToSearch, int key){
+		for(int i=0;i<sortedArrayToSearch.length/2;i++) {
+            int temp = sortedArrayToSearch[i];
+            sortedArrayToSearch[i] = sortedArrayToSearch[sortedArrayToSearch.length-(i+1)];
+            sortedArrayToSearch[sortedArrayToSearch.length-(i+1)] = temp;
+            if(sortedArrayToSearch[i] == key){
+		        return i;
+            } 
+        }
    /**
     * this method is exactly like the one above, except the parameter sortedArrayToSearch will
     * always be sorted in DESCENDING order. Again return the index of the key or return -1
@@ -34,15 +43,20 @@ public class ArrayMethods {
     * 
     * Note: You should attempt to write a method that is more efficient that searchUnsorted
     * */
-    return -1;
-}
+	return -1;
+	}
    
 	public static boolean isSorted(int[] array){
+		for(int i = 1; i <array.length-1; i++){
+			if(array[i] <array[i+1]){
+				return false;
+			}
+		}
        /**
         * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
         * */
-       return false;
-}
+       return true;
+	}
    
 	public static double[] getStats(double[] array){
        /** 
@@ -57,9 +71,14 @@ public class ArrayMethods {
         * */
         double[] stats = new double[6];
         return stats;
-   }
+	}
 	   
 	public static void reverseOrder(int[] array){
+		for(int i = 0; i <array.length/2; i++){
+		    int value = array[i];
+		    array[i] = array[array.length-i-1];
+		    array[array.length-i-1] = value;
+		}
        /**
         * this method reverses the order of the array passed to it.
         * Not that this method does not have a return type. You do not need to copy the array first
@@ -72,9 +91,16 @@ public class ArrayMethods {
         * array = {-6, 16, 10, 9, 1, 5}
         * 
         * */
-   }
+	}
    
 	public static int countDifferences(int[] array1, int[] array2){
+		int difference = 0;
+        for (int i = 0; i <array1.length; i++){
+            if (array1[i] != array2[i]){
+            difference++;
+            }
+        }
+        return difference;
        /**Here, you will write an method that returns the number of values in two arrays 
         * that are NOT the same (either in value OR location).
         * The arrays ALWAYS have the same length
@@ -85,10 +111,21 @@ public class ArrayMethods {
         * countDifferences({1,2,3},{1,3,2}) returns 2, since '2' and '3' are both present, but different locations
         * 
         * */
-        return 0;
-   }
+	}
 
 	public static int longestConsecutiveSequence(int[] array1){
+		int max = 0;
+        for (int i = 1; i <array1.length; i++){
+            int count = 1;
+            while (i <array1.length && array1[i-1]+1 == array1[i]){
+                count++;
+                i++;
+            }
+            if (max <count){
+                max = count;
+            }
+        }
+        return max;
        /**This method counts the longest consequtive sequence in an array.
         * It does not matter where the sequence begins
         * If there are no consecutive numbers, the method should return '1'
@@ -98,9 +135,7 @@ public class ArrayMethods {
         * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
         * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
         * */
-       
-       return 0;
-   }
+	}
 
 	public static int longestSharedSequence(int[] array1, int[] array2){
 	   int max = 0;
@@ -130,9 +165,9 @@ public class ArrayMethods {
         *          since the sequence '9,6,3,4,3' is in both arrays and is 5 integers long, it doesn't matter that the sequence begins at different indices 
         * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
         * */
-   }
+	}
    //returns true if seq is found inside array2
-	private static boolean checkSequence(int[] seq, int[] array2) {
+		private static boolean checkSequence(int[] seq, int[] array2) {
 		for(int i = 0; i <array2.length; i++){
 		   //j checks every element in seq
 			for(int j = 0; j <seq.length; j++){
@@ -149,12 +184,12 @@ public class ArrayMethods {
 
    //returns a sub-array containing the elements
    //in array1 from seqStart to seqEnd
-	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
+		private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
 	   
 	return null;
-}
+	}
 
-   public static int[] generateDistinctItemsList(int n){
+	public static int[] generateDistinctItemsList(int n){
        /**
         * This method needs to generate an int[] of length n that contains distinct, random integers
         * between 1 and 2n 
@@ -163,10 +198,9 @@ public class ArrayMethods {
         * 
         * */
        return null; 
-   }
+	}
    
-   
-   public static void cycleThrough(int[] array, int n){
+	public static void cycleThrough(int[] array, int n){
        /** This problem represents people moving through a line.
         * Once they get to the front of the line, they get what they've been waiting for, then they 
         * immediately go to the end of the line and "cycle through" again.
@@ -189,7 +223,7 @@ public class ArrayMethods {
         * CHALLENGE
         * For extra credit, make your method handle NEGATIVE n
         * */
-   }
+	}
    
 
 }
