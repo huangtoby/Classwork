@@ -26,17 +26,17 @@ public class CaveRoomPd8 {
 	}
 
 	protected void setDirections() {
-		directions	= "";
-		if(doors[NORTH] == null && doors[EAST] == null && doors[SOUTH] == null && doors[WEST] == null){
-			directions = "\n\n This is a room with no exit. You will die here.";		
-		}else{
-			for(int dir = 0; dir <doors.length; dir++){
-				if(doors[dir] != null){
-					directions += "\n There is a "+doors[dir].getDescription()+" to "+toDirection(dir)+
-							". "+doors[dir].getDetails();
-				}
-			}
-		}
+//		directions	= "";
+//		if(doors[NORTH] == null && doors[EAST] == null && doors[SOUTH] == null && doors[WEST] == null){
+//			directions = "\n\n This is a room with no exit. You will die here.";		
+//		}else{
+//			for(int dir = 0; dir <doors.length; dir++){
+//				if(doors[dir] != null){
+//					directions += "\n There is a "+doors[dir].getDescription()+" to "+toDirection(dir)+
+//							". "+doors[dir].getDetails();
+//				}
+//			}
+//		}
 	}
 
 	public String getContents(){
