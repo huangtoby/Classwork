@@ -95,4 +95,9 @@ public class CaveRoomPd8 {
 		description = string;
 	}
 
+	public void interpretAction(String input) {
+	
+		
+	}
+
 }

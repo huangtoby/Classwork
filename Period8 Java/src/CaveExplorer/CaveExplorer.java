@@ -22,6 +22,28 @@ public class CaveExplorer {
 		caves[1][2].setConnection(CaveRoomPd8.WEST, caves[1][2], new Door());
 		caves[1][2].setConnection(CaveRoomPd8.SOUTH, caves[2][2], new Door());
 		caves[1][2].setConnection(CaveRoomPd8.EAST, caves[1][3], new Door());
+		
+		inventory = new InventoryNockles(caves);
+		startExploring();
+	}
+
+	private static void startExploring() {
+		while(true){
+			print(inventory.getDescription());
+			print(currentRoom.getDescription());
+			print("What would you like to do?");
+			String input = in.nextLine();
+			act(input);
+		}	
+	}
+	
+	private static void act(String input) {
+		currentRoom.interpretAction(input);
+		
+	}
+
+	public static void print(String text){
+		System.out.print(text);
 	}
 
 }
