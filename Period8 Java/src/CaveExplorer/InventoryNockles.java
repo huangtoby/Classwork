@@ -1,14 +1,24 @@
 package CaveExplorer;
 
 public class InventoryNockles {
+	
+	private boolean hasMap;
+	private String map;
 
-	public InventoryNockles(CaveRoomPd8[][] caves) {
-		// TODO Auto-generated constructor stub
+	public InventoryNockles() {
+		hasMap = true;
+		updateMap();
+	}
+
+	private void updateMap() {
+		CaveRoomPd8[][] caves = CaveExplorer.caves;
+		//convert these caves to a String representation
+		
 	}
 
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		if(hasMap)return map;
+		else return "You have no inventory.";
 	}
 
 }
