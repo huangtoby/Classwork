@@ -20,7 +20,7 @@ public class GameStartEvent implements Playable {
 			CaveExplorer.print("C'mon! You know you like puzzles. Say yes!!");
 		}
 		readSequence(SEQUENCE_2);
-		CaveExplorer.inventory.
+		CaveExplorer.inventory.setHasMap(true);
 	}
 	
 	public static void readSequence(String[] seq){

@@ -28,7 +28,7 @@ public class CaveRoomPd8 {
 	protected void setDirections() {
 		directions	= "";
 		if(doors[NORTH] == null && doors[EAST] == null && doors[SOUTH] == null && doors[WEST] == null){
-			directions = "\n\n This is a room with no exit. You will die here.";		
+			directions = "\n\nThis is a room with no exit. You will die here.";		
 		}else{
 			for(int dir = 0; dir <doors.length; dir++){
 				if(doors[dir] != null){
@@ -115,7 +115,9 @@ public class CaveRoomPd8 {
 			}
 		}
 		if(borderingRooms[indexFound] != null && doors[indexFound] != null && doors[indexFound].isOpen()){
+			CaveExplorer.currentRoom.leave();
 			CaveExplorer.currentRoom = borderingRooms[indexFound];
+			CaveExplorer.currentRoom.enter();
 			CaveExplorer.inventory.updateMap();
 		}
 		

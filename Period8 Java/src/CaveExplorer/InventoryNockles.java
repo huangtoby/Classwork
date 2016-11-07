@@ -6,8 +6,12 @@ public class InventoryNockles {
 	private String map;
 
 	public InventoryNockles() {
-		hasMap = true;
+		hasMap = false;
 		updateMap();
+	}
+
+	public void setHasMap(boolean hasMap) {
+		this.hasMap = hasMap;
 	}
 
 	public void updateMap() {
