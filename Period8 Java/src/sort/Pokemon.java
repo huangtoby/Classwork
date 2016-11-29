@@ -13,15 +13,7 @@ public class Pokemon {
 		this.level = level;
 		this.poisoned = false;
 	}
-	
-	public static void main(String[] args){
-		Pokemon chicken = new Pokemon("chicken",26);
-		Pokemon dog = new Pokemon("dog",26);
-		chicken.iChooseYou;
-		dog.iChooseYou;
-		
-	}
-	
+
 	public void attack(Pokemon target, Attack attack){
 		if(Math.random() <.9){
 			attack.attack(target);
