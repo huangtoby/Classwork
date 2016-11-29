@@ -10,7 +10,6 @@ public class MainBattle {
 		
 		System.out.println("Squirtle is preparing to attack with water blast");
 		squirtle.attack(bulbasaur, new Attack() {
-			
 			//cuts hp in half
 			public void attack(Pokemon target) {
 				int newHP = target.getHP()/2;
@@ -20,7 +19,6 @@ public class MainBattle {
 		
 		System.out.println("Bulbasaur is preparing to attack with poison powder");
 		bulbasaur.attack(squirtle, new Attack() {
-			
 			public void attack(Pokemon target) {
 				target.setPoisoned(true);
 			}
