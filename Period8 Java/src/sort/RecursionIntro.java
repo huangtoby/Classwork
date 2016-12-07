@@ -35,17 +35,17 @@ public class RecursionIntro {
 		}
 	}
 
-	private static void forLoop(int i, Action action) {
-		if(i <= 0){
-			//base call
-			return;
-		}else{
-			//standard action
-			action.act();
-			//recursive call
-			forLoop(i-1,action);
-		}
-	}
+//	private static void forLoop(int i, Action action) {
+//		if(i <= 0){
+//			//base call
+//			return;
+//		}else{
+//			//standard action
+//			action.act();
+//			//recursive call
+//			forLoop(i-1,action);
+//		}
+//	}
 
 //	public static int factorial(int x){
 //		//for loop method
