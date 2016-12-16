@@ -49,23 +49,23 @@ public class Graphic implements Visible {
 	}
 
 	public BufferedImage getImage() {
-		return null;
+		return image;
 	}
 
 	public int getX() {
-		return 0;
+		return x;
 	}
 
 	public int getY() {
-		return 0;
+		return y;
 	}
 
 	public int getWidth() {
-		return 0;
+		return image.getWidth();
 	}
 
 	public int getHeight() {
-		return 0;
+		return image.getHeight();
 	}
 
 	public boolean isAnimated() {
@@ -73,7 +73,7 @@ public class Graphic implements Visible {
 	}
 
 	public void update() {
-
+		//does nothing, image never changes
 	}
 
 }
