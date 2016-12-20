@@ -31,9 +31,8 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				+ " to the edge of the page, a new line is created.");
 		button = new Button(40,200,80,40,"Button",
 				new Color(100,100,250),new Action() {
-			
 			public void act() {
-				
+				MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
 		});
 		picture = new Graphic(50, 50, "resources/sampleImages/Teemo.jpg");
@@ -56,7 +55,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	}
 
 	public MouseListener getMouseListener(){
-		
+		return this;
 	}
 	
 	public void mouseClicked(MouseEvent m) {
