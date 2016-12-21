@@ -16,7 +16,6 @@ public class ClickGraphicsGame extends GUIApplication {
 	protected void initScreen() {
 		MoveScreen gcs = new MoveScreen(getWidth(), getHeight());
 		setScreen(gcs);
-
 	}
 
 }
