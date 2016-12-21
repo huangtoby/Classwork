@@ -70,5 +70,9 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public MouseListener getMouseListener(){
+		return this;
+	}
 
 }
