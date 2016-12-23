@@ -1,6 +1,6 @@
 package guiPractice.wackAMole;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice.components.ClickableScreen;
 import guiPractice.components.Visible;
@@ -13,7 +13,7 @@ public class WackAMoleScreen extends ClickableScreen {
 	}
 
 	@Override
-	void initAllObjects(ArrayList<Visible> viewObjects) {
+	public void initAllObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 
 	}

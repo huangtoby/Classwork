@@ -3,8 +3,11 @@ package guiPractice.components;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice.Screen;
+import guiPractice.components.Clickable;
+import guiPractice.components.Visible;
 
 public abstract class ClickableScreen extends Screen implements MouseListener{
 	
@@ -14,12 +17,16 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 		super(width, height);
 	}
 
-	abstract void initAllObjects(ArrayList<Visible> viewObjects);
+	public abstract void initAllObjects(List<Visible> viewObjects);
 	
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
-		clickables = 
-		missing them code
+		clickables = new ArrayList<Clickable>();
+		for(Visible v: viewObjects){
+			if(v instanceof Clickable){
+				clickables.add((Clickable)v);
+			}
+		}
 	}
 
 	public void mouseClicked(MouseEvent m) {
