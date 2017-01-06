@@ -139,7 +139,6 @@ public class SimonScreenToby extends ClickableScreen implements Runnable {
 	
 	private void gameOver() {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	private void changeText(String string) {
