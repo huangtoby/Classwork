@@ -5,7 +5,8 @@ import guiPractice.GUIApplication;
 public class ButtonCordGame extends GUIApplication {
 
 	public static ButtonCordGame game;
-	public static ButtonCordScreen buttoncordScreen;
+	public static ButtonScreen buttonScreen;
+	public static CoordScreen coordScreen;
 	
 	public static void main(String[] args){
 		game = new ButtonCordGame();
@@ -17,10 +18,10 @@ public class ButtonCordGame extends GUIApplication {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	protected void initScreen() {
-		ButtonCordScreen bcs = new ButtonCordScreen(getWidth(), getHeight());
-		setScreen(bcs);
+		buttonScreen = new ButtonScreen(getWidth(), getHeight());
+		coordScreen = new CoordScreen(getWidth(), getHeight());
+		setScreen(buttonScreen);
 
 	}
 
