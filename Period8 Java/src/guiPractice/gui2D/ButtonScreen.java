@@ -9,8 +9,6 @@ import guiPractice.Screen;
 import guiPractice.components.Action;
 import guiPractice.components.Button;
 import guiPractice.components.Visible;
-import simon.ButtonInterfaceToby;
-import simon.SimonScreenToby;
 
 public class ButtonScreen extends Screen implements MouseListener{
 
@@ -25,7 +23,7 @@ public class ButtonScreen extends Screen implements MouseListener{
 
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		addButtons(viewObjects);
-		button = new Button(locateX(),locateY(),100,60,"Button", Color.GRAY, new Action() {
+		button = new Button(100,100,100,60,"Button", Color.GRAY, new Action() {
 			public void act() {
 				ButtonCordGame.game.setScreen(ButtonCordGame.coordScreen);
 			}
@@ -50,8 +48,7 @@ public class ButtonScreen extends Screen implements MouseListener{
 		coord = new String[4][4];
 		for(int row = 0; row <coord.length; row++){
 			for(int col = 0; col <coord[row].length; col++){
-				buttons.length = setX(20+13*row);
-				buttons.setY(20+13*col);
+
 			}
 		}
 		return coord;
