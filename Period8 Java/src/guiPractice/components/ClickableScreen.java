@@ -75,7 +75,7 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 		
 	}
 	
-	public MouseListener getMouseListenter(){
+	public MouseListener getMouseListener(){
 		return this;
 	}
 
