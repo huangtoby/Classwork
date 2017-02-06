@@ -56,26 +56,25 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	}
 
 	private void addAnimation(ArrayList<Visible> viewObjects) {
-		AnimatedComponent a = new AnimatedComponent(40,50,200,200);
+		AnimatedComponent a = new AnimatedComponent(40,50,300,300);
 		try{
-			int numberInRow = 6;
-			int rows = 4;
-			int w = 130;
-			int h = 135;
+			int numberInRow = 5;
+			int rows = 1;
+			int w = 54;
+			int h = 50;
 			
-			ImageIcon icon = new ImageIcon("resources/sampleImages/SpriteMan.jpg");
+			ImageIcon icon = new ImageIcon("resources/sampleImages/FloatAbra.png");
 			//create a for loop that will take a "sub-image" from the sprite grid
 			for(int i = 0; i <numberInRow*rows; i++){
 				//declare the "cropped image"
 				BufferedImage cropped = new BufferedImage(w,h, BufferedImage.TYPE_INT_ARGB);
-				int leftMargin = 15;
-				int topMargin = 20;
-				int botMargin = 15;
+				int leftMargin = 0;
+				int topMargin = 0;
 				int x1 = leftMargin+w*(i%numberInRow);
-				int y1 = topMargin+botMargin+h*(i/numberInRow);
+				int y1 = topMargin+h*(i/numberInRow);
 				Graphics2D g = cropped.createGraphics();
-				g.drawImage(icon.getImage(),0,0,w,h,x1,y1,x1+w,y1+h,null);
-				a.addFrame(cropped,50);//change this for time on each frame
+				g.drawImage(icon.getImage(),10,10,w,h,x1,y1,x1+w,y1+h,null);
+				a.addFrame(cropped,125);//change this for time on each frame
 			}
 		}catch(Exception e){
 			e.printStackTrace();
