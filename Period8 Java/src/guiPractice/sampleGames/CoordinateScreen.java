@@ -56,11 +56,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	}
 
 	private void addAnimation(ArrayList<Visible> viewObjects) {
-		AnimatedComponent a = new AnimatedComponent(40,50,300,300);
+		AnimatedComponent a = new AnimatedComponent(40,50,200,200);
 		try{
 			int numberInRow = 5;
 			int rows = 1;
-			int w = 54;
+			int w = 55;
 			int h = 50;
 			
 			ImageIcon icon = new ImageIcon("resources/sampleImages/FloatAbra.png");
@@ -74,7 +74,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				int y1 = topMargin+h*(i/numberInRow);
 				Graphics2D g = cropped.createGraphics();
 				g.drawImage(icon.getImage(),10,10,w,h,x1,y1,x1+w,y1+h,null);
-				a.addFrame(cropped,125);//change this for time on each frame
+				a.addFrame(cropped,200);//change this for time on each frame
 			}
 		}catch(Exception e){
 			e.printStackTrace();
